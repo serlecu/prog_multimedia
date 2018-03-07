@@ -1,40 +1,24 @@
-/*
-int numero = 4;
+ArrayList<Ser> seres;
 
-clase nombreDeclase = contenido;
-________
-
-Crear una lista para luego llamarla. 
-
-https://processing.org/examples/arrayobjects.html
-*/
-
-Ser mySer[];
-
-//Ser(int sh,int s,color c,float v)
-int contador = 0;
-
-void setup(){
-  size(500,500);
+void setup() {
+  size(1280, 800);
+  noStroke();
+  seres = new ArrayList<Ser>();
 }
 
-void draw(){
+void draw() {
   background(0);
-  
-  mySer[contador].walk();
-}
 
-void mouseClicked(){
-  
-  mySer[contador] = new Ser(int(random(2)),int(random(5,30)),color(100,200,20));
-  
-  mySer[contador].posX = mouseX;
-  mySer[contador].posY = mouseY;
-  mySer[contador].v = random(1,10);
-  
-  contador ++;
-  
-  if(contador > 5){
-    contador=0;
+  for (int i = seres.size()-1; i >= 0; i--) {
+    Ser ser = seres.get(i);
+    ser.walk();
+    ser.display();
+    if (ser.muerte()) {
+      seres.remove(i);
+    }
+  }
+
+  if (mousePressed) {
+    seres.add(new Ser(1, 20));
   }
 }
