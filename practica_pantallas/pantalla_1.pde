@@ -1,3 +1,5 @@
+//pantalla de preparación
+
 int count1;
 int loadtime;
 int angle;
