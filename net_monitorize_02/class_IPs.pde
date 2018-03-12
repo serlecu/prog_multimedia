@@ -6,18 +6,22 @@ class IPs {
 
   IPs(float posx, int posy, String text) {
     this.posx = posx;
-    this.posy = posy;
+    this.posy = posy+10*20;
     this.text = text;
-    
-    fill(255);
-    noStroke();
-    //text(text, posx, posy);
   }
-
-
-  boolean delete() {
+  
+  void display(){
+     fill(255);
+    noStroke();
+    text(text, posx, posy);
+  }
+  
+  void move(){
     posx++;
-    if (x > width) {
+  }
+  
+  boolean delete() {
+    if (posx > width) {
       return true;
     } else {
       return false;

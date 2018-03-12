@@ -15,9 +15,10 @@ PFont font;
 CarnivoreP5 meat;
 ArrayList<IPs> ipes;
 int y=height/2;
-float x=0;
+float x=10;
 String oldMeatBox, meatBox = "start";
 Boolean meatStatus = true;
+int count;
 
 void setup() {
   background(0);
@@ -30,25 +31,33 @@ void setup() {
 void packetEvent(CarnivorePacket p) {
   oldMeatBox = meatBox;
   meatBox = p.receiverSocket();
-  if (oldMeatBox != meatBox) {
+  if(oldMeatBox != meatBox) {
     meatStatus = true;
-  } else { 
+    count =count+1;
+  }else if(oldMeatBox == meatBox){ 
     meatStatus = false;
+    count =count-1;
   }
 }
 
 void draw() {
+  
   for (int i = ipes.size()-1; i>=0; i--) {
     IPs ips = ipes.get(i);
+    background(0);
+    ips.display();
+    ips.move();
     //y = 5*(ipes.size());
     if (ips.delete()) {
       ipes.remove(i);
     }
   }
   if ( meatStatus == true) {
-    ipes.add(new IPs(x, y, meatBox));
-    println(meatBox + "  +  "+str(y)+"  +  "+str(x));
-    fill(255);
-    text(meatBox, x, y);
+    ipes.add(new IPs(x, count, meatBox));
+    println(meatBox + "  +  "+str(count)+"  +  "+str(x));
+
+    //fill(255);
+    //text(meatBox, x, y);
+  }else if(meatStatus == false){
   }
 }
