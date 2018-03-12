@@ -1,6 +1,10 @@
 /* -------
- objetivo: que las ip se escriban en la pantalla
- y que se desplacen de izq a derecha. 
+ Funcionamiento:
+ el programa escanea la red wifi y lee las ip receceptoras de paquetes
+ estas se imprimen a la iz. de la pantalla y se desplazan
+ hacia la derecha hasta desparecer.
+ las ip se deberán imprimir en la pantalla de forma que la 
+ posición vertical haga referencia al número que ocupa en el array
  ------- */
 
 import net.sourceforge.jpcap.capture.*;
@@ -14,7 +18,6 @@ import org.rsg.carnivore.net.*;
 PFont font;
 CarnivoreP5 meat;
 ArrayList<IPs> ipes;
-int y=height/2;
 float x=10;
 String oldMeatBox, meatBox = "start";
 Boolean meatStatus = true;
@@ -29,14 +32,20 @@ void setup() {
 }
 
 void packetEvent(CarnivorePacket p) {
+  
   oldMeatBox = meatBox;
+  
   meatBox = p.receiverSocket();
-  if(oldMeatBox != meatBox) {
+  
+  
+    if(oldMeatBox != meatBox) {
     meatStatus = true;
     count =count+1;
+    println("true");
   }else if(oldMeatBox == meatBox){ 
     meatStatus = false;
     count =count-1;
+    println("false");
   }
 }
 
@@ -47,17 +56,13 @@ void draw() {
     background(0);
     ips.display();
     ips.move();
-    //y = 5*(ipes.size());
     if (ips.delete()) {
       ipes.remove(i);
     }
   }
   if ( meatStatus == true) {
-    ipes.add(new IPs(x, count, meatBox));
+    ipes.add(new IPs(count, meatBox));
     println(meatBox + "  +  "+str(count)+"  +  "+str(x));
-
-    //fill(255);
-    //text(meatBox, x, y);
   }else if(meatStatus == false){
   }
 }

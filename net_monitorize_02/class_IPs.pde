@@ -4,8 +4,7 @@ class IPs {
   int posy;
   String text;
 
-  IPs(float posx, int posy, String text) {
-    this.posx = posx;
+  IPs(int posy, String text) {
     this.posy = posy+10*20;
     this.text = text;
   }
