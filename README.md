@@ -1,10 +1,10 @@
 # README
-Este repositoio contiene los archivos y pproyetos para la asignatura "Programacion Multimedia" del Mater de Artes Visuales y Multimedia (AVM) de la Universitat Politecnica de Valencia (UPV).
+<p>Este repositoio contiene los archivos y pproyetos para la asignatura "Programacion Multimedia" del Master de Artes Visuales y Multimedia (AVM) de la Universitat Politecnica de Valencia (UPV).</p>
 
-Profesores:
- - Moises Mañas
- - Fernando Cordon
- - Carlos Barragán
- - ..
+<p>Profesores:<ul>
+ <li>Fernando Cordon</li>
+ <li>Moises Mañas</li>
+ <li>Carlos García</li>
+ <li>Paco Sanmartín </li></ul></p>
 
- Dueño: Sergio Lecuona Fornes
+ <p>Alumno: Sergio Lecuona Fornes</p>
