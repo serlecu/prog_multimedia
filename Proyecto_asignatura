@@ -1,0 +1,21 @@
+##Proyecto Programación Multimedia
+
+Se que al final de la asignatura hay que presentar un proyecto en el que se comuniquen
+los tres sistemas (Processing, Arduino y PureData) que aprenderemos con los diferentes profesores.
+Por eso voy a palntear en trabajo teniendo en cuenta esa premisa.
+
+Realmente tengo dos ideas de proyecto:
+
+1. Utilizar datos de la actividad de redes inalambricas, para realizar composiciones sonoras en vivo.
+    El dispositivo ha de ser capaz de interceptar paquetes de datos, y enviarlos a un procesador
+    que los mapee para generar sonidos y sus secuencias.
+    Además, ha de incluir una interfaz física mediante la cual se pueda modular el sonido o la mezcla final.
+    No habría nigun elemento visual dinámico ya que la importancia se encuentra en el sonido. La vista no ha de despistar. 
+
+2. Crear un sistema de audio-looping para directos.
+    Este debe consistir en:
+    -una interfaz física para contolar el funcionamiento de los loops
+    -una aplicación para configurar los canales y envíos de audio (previo a la actuación)
+    -una interfaz visual para reconocer el estado de los bucles
+    -se abre la posibilidad de que modifique unos visuales "predefinidos" vinculados a los bucles
+    -la posibilidad de integrar un secuenciador-midi para controlar samplers o sintetizadores externos
