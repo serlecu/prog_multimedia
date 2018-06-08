@@ -1,0 +1,8 @@
+#N canvas 785 201 450 300 10;
+#X obj 105 54 dumpOSC 11112;
+#X obj 82 138 print;
+#X obj 118 104 OSCroute /msg1;
+#X obj 207 138 print;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X connect 2 1 3 0;

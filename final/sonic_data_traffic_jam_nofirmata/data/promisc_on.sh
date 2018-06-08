@@ -1,0 +1,1 @@
+echo 8143$ | sudo -S chmod 777 /dev/bpf*
